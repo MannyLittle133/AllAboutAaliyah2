@@ -1,0 +1,28 @@
+body {
+    background-color: rgb(243, 139, 220);
+}
+
+
+.signUp {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    /* color: pink; */
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* align-items: center; */
+    /* justify-content: center; */
+    /* height: 100vh; */
+}
+
+.signUpForm {
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: rgb(243, 139, 220);
+    padding: 20px;
+    margin: 200px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* height: 100vh; */
+}

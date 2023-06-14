@@ -18,7 +18,10 @@ function SignupFormPage() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (password === confirmPassword && code === '1045') {
+    if (password === confirmPassword) {
+      if (code !== '5401') {
+        return setErrors(['Code is not valid']);
+    }
       setErrors([]);
       return dispatch(sessionActions.signup({ email, username, password }))
         .catch(async (res) => {
@@ -39,8 +42,8 @@ function SignupFormPage() {
 
   return (
     <>
-      <h1>Sign Up</h1>
-      <form onSubmit={handleSubmit}>
+      <h1 className="signUp">Sign Up</h1>
+      <form className="signUpForm"  onSubmit={handleSubmit}>
         <ul>
           {errors.map((error) => <li key={error}>{error}</li>)}
         </ul>
@@ -82,9 +85,10 @@ function SignupFormPage() {
         </label>
           Code
           <input
-            type="number"
+            type="text"
             value={code}
             onChange={(e) => setCode(e.target.value)}
+            placeholder="Enter code"
             required
           />
         <button type="submit">Sign Up</button>
